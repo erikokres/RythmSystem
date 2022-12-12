@@ -20,6 +20,8 @@ public class NoteUpdate : MonoBehaviour
         if(Input.GetKeyDown(keyToPress)){
             if(canBePressed){
                 gameObject.SetActive(false);
+
+                GameManager.instance.NoteHit();
             }
         }
     }
@@ -36,6 +38,8 @@ public class NoteUpdate : MonoBehaviour
     {
         if(other.tag == "Activator"){
             canBePressed = false;
+
+            GameManager.instance.NoteMissed();
         }
     }
 }
